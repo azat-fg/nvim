@@ -1,0 +1,7 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["html", "json", "lua", "python"],
+  "Lua.telemetry.enable": false,
+  "Lua.diagnostics.globals": ["vim", "use"],
+  "python.analysis.extraPaths": ["/Users/azat-fg/arcadia/locdoc"],
+  "python.pythonPath": "/opt/homebrew/bin/python3"
+}
