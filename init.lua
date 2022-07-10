@@ -1,6 +1,8 @@
-require('keybindings')
-require('packages')
-require('config')
+require "keybindings"
+require "packages"
+require "config"
+require "options"
+require "alpha"
 
 local configs = require 'nvim-treesitter.configs'
 configs.setup {

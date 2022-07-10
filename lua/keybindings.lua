@@ -6,7 +6,7 @@ keymap('n', '<c-h>', "<c-w>h", opts)
 keymap('n', '<c-k>', "<c-w>k", opts)
 keymap('n', '<c-l>', "<c-w>l", opts)
 
-
+-- LSP keys
 -- vim.keymap.set("n", "K", vim.fn.CocAction('jumpDefinition'), { buffer = 0 })
 -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer = 0})
 -- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {buffer = 0})
@@ -18,4 +18,4 @@ keymap('n', '<c-l>', "<c-w>l", opts)
 -- vim.keymap.set("n", "<c-k>", vim.lsp.buf.signature_help, {buffer = 0})
 -- vim.keymap.set("n", "<leader>af", vim.lsp.buf.code_action, {buffer = 0})
 -- vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {buffer = 0})
-vim.cmd("source ~/.config/nvim/lua/coc-config.vim")
+vim.cmd("source $HOME/.config/nvim/lua/coc-config.vim")
