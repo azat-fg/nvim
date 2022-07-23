@@ -82,7 +82,7 @@ local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
@@ -104,17 +104,6 @@ M.on_attach = function(client, bufnr)
   lsp_highlight_document(client)
   attach_navic(client, bufnr)
 
-  -- for tsserver
-  if client.name == "tsserver" then
-    require("lsp-inlayhints").setup_autocmd(bufnr, "typescript/inlayHints")
-  end
-
-  if client.name ~= "rust_analyzer" then
-    if client.server_capabilities.inlayHintProvider then
-      require("lsp-inlayhints").setup_autocmd(bufnr)
-    end
-  end
-
   if client.name == "jdt.ls" then
     -- TODO: instantiate capabilities in java file later
     M.capabilities.textDocument.completion.completionItem.snippetSupport = false
@@ -128,10 +117,10 @@ end
 
 function M.enable_format_on_save()
   vim.cmd [[
-    augroup format_on_save
-      autocmd! 
-      autocmd BufWritePre * lua vim.lsp.buf.format({ async = true }) 
-    augroup end
+  augroup format_on_save
+  autocmd! 
+  autocmd BufWritePre * lua vim.lsp.buf.format({ async = true }) 
+  augroup end
   ]]
   vim.notify "Enabled format on save"
 end

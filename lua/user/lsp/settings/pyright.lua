@@ -1,15 +1,10 @@
 return {
-  cmd = { "py" },
   settings = {
     python = {
       analysis = {
-        typeCheckingMode = "basic",
-        diagnosticMode = "workspace",
-        inlayHints = {
-          variableTypes = true,
-          functionReturnTypes = true,
-        },
+        extraPaths =  { "/Users/azat-fg/arcadia/locdoc" }
       },
+
     },
   },
 }
