@@ -3,12 +3,16 @@ require('packer').startup(function()
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
   use 'morhetz/gruvbox'
+  use 'folke/tokyonight.nvim'
+  -- Terminal
+  use "akinsho/toggleterm.nvim"
+  -- Surround
+  use "tpope/vim-surround"
   -- TreeSitter.
   use 'nvim-treesitter/nvim-treesitter'
   -- Helping indent lines.
   use 'lukas-reineke/indent-blankline.nvim'
   use 'jiangmiao/auto-pairs'
-  use 'tpope/vim-surround'
   use 'fatih/vim-go'
   use 'preservim/tagbar'
   use 'neovim/nvim-lspconfig'
